@@ -1,0 +1,16 @@
+Checks: >
+  bugprone-*,             # Common bugs or suspicious code
+  readability-*,          # Readability improvements
+  modernize-*,            # Encourages modern C++ practices
+  performance-*,          # Performance optimizations
+  cppcoreguidelines-*,    # General best practices based on C++ Core Guidelines
+  misc-*,                 # Miscellaneous useful checks
+  clang-analyzer-*        # Static analysis checks
+  -cppcoreguidelines-pro-type-member-init,  # Disable check for public fields
+  -cppcoreguidelines-non-private-member-variables-in-classes  # Disable warning for public members
+
+WarningsAsErrors: true      # Treat warnings as errors
+
+HeaderFilterRegex: '.*'   # Apply checks to all headers
+AnalyzeTemporaryDtors: true # Enable temporary destructor checks
+
