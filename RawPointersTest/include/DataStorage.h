@@ -16,12 +16,13 @@ class DataStorage
   DataStorage& operator=( DataStorage&& ) = default;       // Move assignment operator
 
   const std::unordered_map<unsigned, std::shared_ptr<Model::Assembly>>& GetAssemblyList();
-  std::shared_ptr<Model::Assembly> AddAssembly();
-  std::shared_ptr<Model::Assembly> AddAssembly( std::string name );
+  Model::Assembly* AddAssembly();
+  Model::Assembly* AddAssembly( std::string name );
   void RemoveAssembly( const std::shared_ptr<Model::Assembly>& assemblyToRemove );
 
   void PrintAllData();
   void PrintSortedData();
+  void SortDataForTiming();
 
  private:
   std::unordered_map<unsigned, std::shared_ptr<Model::Assembly>> m_AssemblyList;
